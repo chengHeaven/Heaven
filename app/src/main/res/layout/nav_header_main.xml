@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/colorPageBg"
@@ -31,7 +30,7 @@
                 android:layout_width="60dp"
                 android:layout_height="60dp"
                 android:contentDescription="@+id/avatar"
-                android:scaleType="centerCrop"/>
+                android:scaleType="centerCrop" />
 
             <LinearLayout
                 android:layout_width="wrap_content"
@@ -43,10 +42,10 @@
                     android:id="@+id/tv_username"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="@string/logged_out"
+                    android:text="@string/app_name"
                     android:textAppearance="@style/TextAppearance.AppCompat.Body1"
                     android:textColor="@color/colorWhite"
-                    android:textSize="17sp"/>
+                    android:textSize="17sp" />
 
                 <TextView
                     android:id="@+id/tv_level"
@@ -59,7 +58,7 @@
                     android:text="@string/lv_10"
                     android:textColor="@color/colorWhite"
                     android:textSize="12sp"
-                    android:textStyle="italic|bold"/>
+                    android:textStyle="italic|bold" />
 
             </LinearLayout>
 
@@ -82,7 +81,7 @@
             android:layout_width="20dp"
             android:layout_height="20dp"
             android:contentDescription="@+id/avatar"
-            android:src="@drawable/ic_nav_homepage"/>
+            android:src="@drawable/ic_nav_homepage" />
 
         <TextView
             android:layout_width="wrap_content"
@@ -91,7 +90,7 @@
             android:layout_marginStart="16dp"
             android:text="@string/app_main"
             android:textColor="@color/colorContent"
-            android:textSize="15sp"/>
+            android:textSize="15sp" />
 
     </LinearLayout>
 
@@ -111,7 +110,7 @@
             android:layout_width="20dp"
             android:layout_height="20dp"
             android:contentDescription="@+id/avatar"
-            android:src="@drawable/ic_nav_scan"/>
+            android:src="@drawable/ic_nav_scan" />
 
         <TextView
             android:layout_width="wrap_content"
@@ -120,7 +119,7 @@
             android:layout_marginStart="16dp"
             android:text="@string/sweep_download"
             android:textColor="@color/colorContent"
-            android:textSize="15sp"/>
+            android:textSize="15sp" />
 
     </LinearLayout>
 
@@ -139,7 +138,7 @@
             android:layout_width="20dp"
             android:layout_height="20dp"
             android:contentDescription="@+id/avatar"
-            android:src="@drawable/ic_nav_feedback"/>
+            android:src="@drawable/ic_nav_feedback" />
 
         <TextView
             android:layout_width="wrap_content"
@@ -148,7 +147,7 @@
             android:layout_marginStart="16dp"
             android:text="@string/feedback"
             android:textColor="@color/colorContent"
-            android:textSize="15sp"/>
+            android:textSize="15sp" />
 
     </LinearLayout>
 
@@ -167,7 +166,7 @@
             android:layout_width="20dp"
             android:layout_height="20dp"
             android:contentDescription="@+id/avatar"
-            android:src="@drawable/ic_nav_about"/>
+            android:src="@drawable/ic_nav_about" />
 
         <TextView
             android:layout_width="wrap_content"
@@ -176,7 +175,7 @@
             android:layout_marginStart="16dp"
             android:text="@string/about"
             android:textColor="@color/colorContent"
-            android:textSize="15sp"/>
+            android:textSize="15sp" />
 
     </LinearLayout>
 
@@ -210,6 +209,6 @@
         android:layout_width="match_parent"
         android:layout_height="1px"
         android:background="#e0e0e0"
-        android:visibility="gone"/>
+        android:visibility="gone" />
 
 </LinearLayout>

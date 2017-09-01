@@ -13,4 +13,9 @@ public class SearchActivity extends BaseActivity {
     protected int getLayoutId() {
         return R.layout.search_act;
     }
+
+    @Override
+    protected boolean isDoubleExit() {
+        return false;
+    }
 }

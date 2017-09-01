@@ -10,30 +10,55 @@
     <string name="action_share">分享</string>
     <string name="help">介绍与帮助</string>
     <string name="call_me">联系我</string>
-    <string name="string_about">由于网易云音乐用了很久，特别喜爱它的界面风格，所以仿写了它的UI。如构成侵权请及时通知我修改或删除。
-        \n\n 大部分数据使用的是代码家的https://gank.io和豆瓣APIV2.0，一切数据解释权都归代码家和豆瓣所有。
-        \n\n 干货每日推荐内容缓存三天，每天12：30更新，如没有内容则取缓存。电影热映榜每日零点更新。
-        \n\n 整体采用Retrofit+RxJava+MvvM-DataBinding框架。
-        \n\n 我的GitHub：https://github.com/youlookwhat
-        \n\n 项目完全开源，如果你觉得不错，请帮忙Star一下吧，或帮忙分享给你的朋友，这是给我们最大的动力与支持，非常感谢！
+    <string name="string_about">&#160;&#160;github上看到 "云阅" 项目, 觉得做的挺不错的, 看了下是 MVVM 模式的, 就打算将其转换为 当时正在学习的 MVP 模式
+        \n\n &#160;&#160;项目中使用的 MVP 模式与其他 MVP 模式有些区别, 稍后几天会写一篇文章来介绍一下项目中所使用的 MVP。
+        \n\n &#160;&#160;大部分数据使用的是代码家的https://gank.io和豆瓣APIV2.0，一切数据解释权都归代码家和豆瓣所有。
+        \n\n &#160;&#160;干货每日推荐内容缓存三天，每天12：30更新，如没有内容则取缓存。电影热映榜每日零点更新。
+        \n\n &#160;&#160;当当天返回数据为空, 则会继续请求前一天的数据, 知道返回不为空。
+        \n\n &#160;&#160;整体采用Retrofit+RxJava+MVP+Dagger2框架。
+        \n\n &#160;&#160;我的GitHub：https://github.com/chengHeaven
+        \n\n &#160;&#160;项目完全开源，如果你觉得不错，请帮忙Star一下吧，或帮忙分享给你的朋友，这是给我们最大的动力与支持，非常感谢！
     </string>
     <string name="string_about_me">Heaven_Cheng</string>
-    <string name="open_library">用到的开源库</string>
+    <string name="open_library">build.gradle</string>
     <string name="string_lib">
         xrecyclerview
-        \n zoomlibrary
-        \n com.android.support:appcompat-v7:24.2.1
-        \n com.android.support:design:24.2.1
-        \n com.jakewharton.retrofit:retrofit1-okhttp3-client
-        \n io.reactivex:rxandroid:1.2.0
-        \n com.nineoldandroids:library:2.4.0
-        \n jp.wasabeef:glide-transformations:2.0.1
-        \n com.youth.banner:banner:1.4.2
-        \n com.daimajia.slider:library:1.1.5@aar
-        \n com.cocosw:bottomsheet:1.+@aar
-        \n com.google.zxing:core:3.2.1
+        \n compile "com.android.support:appcompat-v7:25.3.1"
+        \n compile "com.android.support:cardview-v7:25.3.1"
+        \n compile "com.android.support:design:24.2.0"
+        \n compile "com.google.code.gson:gson:2.7"
+
+        \n // butterknife
+        \n compile "com.jakewharton:butterknife:8.0.1"
+        \n apt "com.jakewharton:butterknife-compiler:8.0.1"
+
+        \n compile "jp.wasabeef:glide-transformations:2.0.1"
+        \n compile "com.github.bumptech.glide:glide:3.7.0"
+        \n compile "org.litepal.android:core:1.4.1"
+
+        \n // retrofit
+        \n compile "com.squareup.retrofit2:retrofit:2.2.0"
+        \n compile "com.squareup.retrofit2:converter-gson:2.2.0"
+        \n compile "com.squareup.retrofit2:adapter-rxjava:2.2.0"
+        \n compile "com.squareup.okhttp3:logging-interceptor:3.4.1"
+        \n compile "com.jakewharton.retrofit:retrofit2-rxjava2-adapter:1.0.0-RC3"
+
+        \n // rxjava
+        \n compile "io.reactivex.rxjava2:rxjava:2.0.1"
+        \n compile "io.reactivex.rxjava2:rxandroid:2.0.1"
+
+        \n compile "com.google.dagger:dagger:2.10"
+        \n apt "com.google.dagger:dagger-compiler:2.10"
+        \n provided "org.glassfish:javax.annotation:10.0-b28"
+
+        \n compile "com.cocosw:bottomsheet:1.3.0@aar"
+        \n compile "com.youth.banner:banner:1.4.9"
+        \n compile "com.daimajia.slider:library:1.1.5@aar"
+        \n compile "com.nineoldandroids:library:2.4.0"
+
+        \n compile "com.android.support:multidex:1.0.1"
     </string>
-    <string name="share_text">发现了一个高仿网易云音乐的App，里面有大量IT干货，每天提供安卓，IOS等最新资讯，还有最新电影热映榜和大量书籍信息，大力推荐哦~：https://fir.im/cloudreader</string>
+    <string name="share_text">发现了一个高仿网易云音乐的App，里面有大量IT干货，每天提供安卓，IOS等最新资讯，还有最新电影热映榜和大量书籍信息，大力推荐哦</string>
     <string name="string_everyday_empty">暂时没有更新内容，去看看其他信息吧~</string>
 
     <string name="no_name">佚名</string>
@@ -56,7 +81,7 @@
     <string name="listview_header_last_time">上次更新时间：</string>
     <string name="_8230">努力加载中&#8230;</string>
     <string name="loading_failed">加载失败,点击重试</string>
-    <string name="copy_url" >复制链接</string>
+    <string name="copy_url">复制链接</string>
     <string name="open_url">打开链接</string>
     <string name="save">保存</string>
     <string name="separator">&#160;/&#160;</string>
@@ -78,5 +103,6 @@
     <string name="genre">类型：</string>
     <string name="score">评分：</string>
     <string name="more_info">更多信息</string>
+    <string name="issues">Issues</string>
 
 </resources>

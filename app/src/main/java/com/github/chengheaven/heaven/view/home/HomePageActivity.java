@@ -29,6 +29,7 @@ public class HomePageActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
         ButterKnife.bind(this);
+        mToolbar.setTitle("项目介绍");
         StatusBarUtil.setTranslucentForImageView(this, 0, mToolbar);
         mFab.setOnClickListener(v -> ShareUtils.share(v.getContext(), R.string.share_text));
     }
