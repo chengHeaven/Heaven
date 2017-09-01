@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:id="@+id/header"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:visibility="gone">
+
+        <com.youth.banner.Banner
+            android:id="@+id/every_banner"
+            android:layout_width="match_parent"
+            android:layout_height="150dp"
+            android:background="@drawable/img_two_bi_one"
+            app:image_scale_type="fit_xy"
+            app:indicator_drawable_selected="@drawable/banner_red"
+            app:indicator_drawable_unselected="@drawable/banner_grey"
+            app:indicator_height="9dp"
+            app:indicator_margin="3dp"
+            app:indicator_width="9dp"
+            app:is_auto_play="true" />
+
+        <LinearLayout
+            android:id="@+id/personal_recommend"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="18dp"
+            android:baselineAligned="false"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <ImageButton
+                    android:id="@+id/every_xd"
+                    android:layout_width="53dp"
+                    android:layout_height="53dp"
+                    android:background="@drawable/home_middle_fm"
+                    android:contentDescription="@+id/every_xd" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:text="干货闲读"
+                    android:textColor="@color/colorContent"
+                    android:textSize="12sp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/every_fl"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <FrameLayout
+                    android:layout_width="53dp"
+                    android:layout_height="53dp"
+                    android:clickable="true">
+
+                    <ImageView
+                        android:id="@+id/daily_btn"
+                        android:layout_width="53dp"
+                        android:layout_height="53dp"
+                        android:background="@drawable/home_middle_day"
+                        android:contentDescription="@+id/daily_btn" />
+
+                    <TextView
+                        android:id="@+id/tv_daily_text"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:text="XX"
+                        android:textColor="@drawable/select_gank_day"
+                        android:textSize="25sp" />
+
+                </FrameLayout>
+
+                <TextView
+                    android:id="@+id/textView4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:text="每日干货推荐"
+                    android:textColor="@color/colorContent"
+                    android:textSize="12sp" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <ImageButton
+                    android:id="@+id/every_hot"
+                    android:layout_width="53dp"
+                    android:layout_height="53dp"
+                    android:layout_gravity="center"
+                    android:background="@drawable/home_middle_rank"
+                    android:contentDescription="@+id/every_hot" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="8dp"
+                    android:text="新电影热映榜"
+                    android:textColor="@color/colorContent"
+                    android:textSize="12sp" />
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0.4dp"
+            android:layout_marginTop="13dp"
+            android:background="@color/colorHomeLine" />
+
+    </LinearLayout>
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/every_recycler"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <RelativeLayout
+        android:id="@+id/bottom"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:visibility="gone">
+
+        <TextView
+            android:id="@+id/tx_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="25dp"
+            android:text="现在暂不可以根据个人喜好，自由调整首页项目顺序~"
+            android:textColor="#7D7D7D"
+            android:textSize="10sp" />
+
+        <LinearLayout
+            android:id="@+id/ll_change_item"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tx_text"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="20dp"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/home_adjust_background"
+            android:clickable="true"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:clickable="false"
+                android:text="调整栏目顺序"
+                android:textColor="@color/colorTheme"
+                android:textSize="12sp" />
+        </LinearLayout>
+    </RelativeLayout>
+</LinearLayout>
