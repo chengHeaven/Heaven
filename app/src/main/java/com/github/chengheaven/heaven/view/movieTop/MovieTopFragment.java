@@ -151,16 +151,18 @@ public class MovieTopFragment extends BaseFragment implements MovieTopContract.V
         public void onBindViewHolder(ViewHolder holder, int position) {
             Glide.with(getContext())
                     .load(mList.get(position).getImages().getLarge())
+                    .asBitmap()
                     .placeholder(R.drawable.img_one_bi_one)
-                    .crossFade(1500)
-                    .centerCrop()
+                    .fitCenter()
                     .into(holder.mBookImage);
             holder.mBookName.setText(mList.get(position).getTitle());
             holder.mBookScore.setText(String.format("评分：%s", mList.get(position).getRating().getAverage()));
 
             holder.itemView.setOnClickListener(v -> {
                 Intent intent = new Intent(getActivity(), MovieDetailActivity.class);
-                intent.putExtra("id", mList.get(position).getId());
+                Bundle bundle = new Bundle();
+                bundle.putSerializable("movieBean", mList.get(position));
+                intent.putExtra("item", bundle);
                 startActivity(intent);
             });
         }

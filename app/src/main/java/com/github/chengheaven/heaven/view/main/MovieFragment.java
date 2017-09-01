@@ -144,6 +144,8 @@ public class MovieFragment extends BaseFragment implements MovieContract.View {
         public void onBindViewHolder(ViewHolder holder, int position) {
             Glide.with(getContext())
                     .load(mList.get(position).getImages().getLarge())
+                    .asBitmap()
+                    .fitCenter()
                     .into(holder.mImage);
             holder.mTitle.setText(mList.get(position).getTitle());
             StringBuilder directors = new StringBuilder();
