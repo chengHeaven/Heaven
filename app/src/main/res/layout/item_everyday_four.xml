@@ -3,10 +3,10 @@
     android:id="@+id/item_everyday_four_title"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:layout_marginBottom="8dp"
-    android:layout_marginLeft="10dp"
-    android:layout_marginRight="10dp"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    android:paddingBottom="8dp"
+    android:paddingEnd="10dp"
+    android:paddingStart="10dp">
 
     <RelativeLayout
         android:id="@+id/item_title"

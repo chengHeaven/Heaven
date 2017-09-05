@@ -478,14 +478,12 @@ public class EveryFragment extends BaseFragment implements EveryContract.View {
             for (int i = 0; i < mList.size(); i++) {
                 if (mItemList.get(position).equals(Constants.getTitles().get(mList.get(i).get(0).getType()))) {
                     isHave = true;
-                    holder.mTitle.setVisibility(View.VISIBLE);
-                    holder.mItemTitle.setVisibility(View.VISIBLE);
-                    holder.mEveryRecycler.setVisibility(View.VISIBLE);
+                    holder.setVisibility(true);
                     holder.mText.setText(mItemList.get(position));
                     holder.mImage.setImageResource(mList.get(i).get(0).getDrawable());
 
                     holder.mEveryRecycler.setLayoutManager(new GridLayoutManager(getActivity(), 6));
-//                    holder.mEveryRecycler.setNestedScrollingEnabled(false);
+                    holder.mEveryRecycler.setNestedScrollingEnabled(false);
 
                     if (mList.get(i).size() > 6) {
                         List<HomeBean> list = new ArrayList<>();
@@ -501,9 +499,7 @@ public class EveryFragment extends BaseFragment implements EveryContract.View {
             }
 
             if (!isHave) {
-                holder.mTitle.setVisibility(View.GONE);
-                holder.mItemTitle.setVisibility(View.GONE);
-                holder.mEveryRecycler.setVisibility(View.GONE);
+                holder.setVisibility(false);
             }
 
             holder.mMore.setOnClickListener(v -> {
@@ -557,6 +553,20 @@ public class EveryFragment extends BaseFragment implements EveryContract.View {
             ViewHolder(View itemView) {
                 super(itemView);
                 ButterKnife.bind(this, itemView);
+            }
+
+            public void setVisibility(boolean visible) {
+                RecyclerView.LayoutParams param = (RecyclerView.LayoutParams) itemView.getLayoutParams();
+                if (visible) {
+                    param.height = LinearLayout.LayoutParams.WRAP_CONTENT;
+                    param.width = LinearLayout.LayoutParams.MATCH_PARENT;
+                    itemView.setVisibility(View.VISIBLE);
+                } else {
+                    itemView.setVisibility(View.GONE);
+                    param.height = 0;
+                    param.width = 0;
+                }
+                itemView.setLayoutParams(param);
             }
         }
     }
