@@ -25,7 +25,9 @@ import com.github.chengheaven.heaven.presenter.gank.CustomizationContract;
 import com.github.chengheaven.heaven.view.webview.WebViewActivity;
 
 import java.util.ArrayList;
+import java.util.LinkedHashMap;
 import java.util.List;
+import java.util.Map;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -42,6 +44,7 @@ public class CustomizationFragment extends BaseFragment implements Customization
     private String type = "all";
     private int per_page = 20;
     HeaderView mHeaderView;
+    private Map<String, String> map = new LinkedHashMap<>();
 
     private CustomizationAdapter mAdapter;
 
@@ -56,6 +59,16 @@ public class CustomizationFragment extends BaseFragment implements Customization
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = LayoutInflater.from(getContext()).inflate(R.layout.customization_fragment, container, false);
         ButterKnife.bind(this, view);
+
+        map.put("Android", "Android");
+        map.put("福利", "Welfare");
+        map.put("iOS", "iOS");
+        map.put("休息视频", "Video");
+        map.put("拓展资源", "Expand");
+        map.put("前端", "Front");
+        map.put("App", "App");
+        map.put("瞎推荐", "Recommend");
+
 
         mRecycler.setLayoutManager(new LinearLayoutManager(getActivity()));
         mRecycler.setPullRefreshEnabled(false);
@@ -212,10 +225,9 @@ public class CustomizationFragment extends BaseFragment implements Customization
     public void setType(String t) {
         type = t;
         mAdapter.clear();
-        if (t.equals("iOS")) {
-            mHeaderView.mTypeText.setText(getString(R.string.ios));
-        } else if (t.equals(getString(R.string.all))) {
-            mHeaderView.mTypeText.setText(getString(R.string.all_all));
+        mHeaderView.mTypeText.setText(t);
+        if (t.equals("IOS")) {
+            type = getString(R.string.iOS);
         }
         mPresenter.getCustomization(null, type, page, per_page);
     }

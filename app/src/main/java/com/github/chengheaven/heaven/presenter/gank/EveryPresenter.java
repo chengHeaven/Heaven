@@ -81,7 +81,7 @@ public class EveryPresenter implements EveryContract.Presenter {
 
             @Override
             public void onFailed(String msg) {
-                mView.getAgainRecycler();
+                mView.hideAnimation();
                 mView.toastMessage(msg);
                 mView.updateRecyclerFromCache();
             }

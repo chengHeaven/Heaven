@@ -104,5 +104,6 @@
     <string name="score">评分：</string>
     <string name="more_info">更多信息</string>
     <string name="issues">Issues</string>
+    <string name="change_item">调整栏目顺序</string>
 
 </resources>

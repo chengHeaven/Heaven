@@ -97,10 +97,12 @@ public class EveryDataRepository implements EveryDataSource {
                     if (code) {
                         String message = jsonObject.getString("error");
                         callback.onFailed(message);
+                        return;
                     }
 
-                    if (jsonObject.getString("results") == null || jsonObject.getString("results").equals("")) {
+                    if (jsonObject.getString("results").equals("{}")) {
                         callback.onFailed("results is empty");
+                        return;
                     }
 
                     ArrayList<List<HomeBean>> homeList = new ArrayList<>();

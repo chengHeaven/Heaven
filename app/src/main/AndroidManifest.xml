@@ -36,6 +36,7 @@
         <activity android:name=".view.movieDetail.MovieDetailActivity" />
         <activity android:name=".view.bookDetail.BookDetailActivity" />
         <activity android:name=".view.search.SearchActivity" />
+        <activity android:name=".view.main.gank.ItemChangeActivity" />
     </application>
 
 </manifest>

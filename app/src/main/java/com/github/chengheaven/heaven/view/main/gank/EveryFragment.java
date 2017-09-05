@@ -7,6 +7,7 @@ import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.StaggeredGridLayoutManager;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -15,6 +16,7 @@ import android.view.animation.LinearInterpolator;
 import android.view.animation.RotateAnimation;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
@@ -30,6 +32,7 @@ import com.github.chengheaven.heaven.helper.RxBus;
 import com.github.chengheaven.heaven.http.cache.ACache;
 import com.github.chengheaven.heaven.presenter.gank.EveryContract;
 import com.github.chengheaven.heaven.tools.GlideImageLoader;
+import com.github.chengheaven.heaven.tools.SharedPreferenceUtil;
 import com.github.chengheaven.heaven.tools.TimeUtil;
 import com.github.chengheaven.heaven.tools.Utils;
 import com.github.chengheaven.heaven.view.webview.WebViewActivity;
@@ -38,9 +41,8 @@ import com.youth.banner.Banner;
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.LinkedHashMap;
+import java.util.Collections;
 import java.util.List;
-import java.util.Map;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -59,12 +61,12 @@ public class EveryFragment extends BaseFragment implements EveryContract.View {
     @BindView(R.id.every_recycler)
     RecyclerView mEveryView;
 
+    private EveryAdapter mAdapter;
     private EveryBaseAdapter mEveryAdapter;
     private RotateAnimation animation;
     public ACache mCache;
     private boolean isFirst = true;
     private List<String> last = new ArrayList<>();
-    private Map<String, String> map = new LinkedHashMap<>();
 
     private EveryContract.Presenter mPresenter;
 
@@ -83,15 +85,6 @@ public class EveryFragment extends BaseFragment implements EveryContract.View {
         mEveryView.setAdapter(mEveryAdapter);
         mCache = ACache.get(getContext());
 
-        map.put("Android", "Android");
-        map.put("Welfare", "福利");
-        map.put("iOS", "iOS");
-        map.put("Video", "休息视频");
-        map.put("Expand", "拓展资源");
-        map.put("Front", "前端");
-        map.put("App", "App");
-        map.put("Recommend", "瞎推荐");
-
         String time = TimeUtil.getData();
         String[] s = time.split("-");
 
@@ -109,7 +102,8 @@ public class EveryFragment extends BaseFragment implements EveryContract.View {
                 public void onAnimationStart(Animation animation) {
                     mPresenter.getBannerUrl();
                     if (TimeUtil.isRightTime()) {
-                        mPresenter.getRecycler(s[0], s[1], s[2]);
+                        mPresenter.getRecycler("2017", "09", "01");
+//                        mPresenter.getRecycler(s[0], s[1], s[2]);
                         last = Arrays.asList(s);
                     } else {
                         last = TimeUtil.getLastTime(s[0], s[1], s[2]);
@@ -141,6 +135,12 @@ public class EveryFragment extends BaseFragment implements EveryContract.View {
     @Override
     public void onResume() {
         super.onResume();
+        Log.d("onResume: ", "onResume");
+        if (mAdapter != null) {
+            List<String> list = new ArrayList<>();
+            Collections.addAll(list, SharedPreferenceUtil.getInstance(getContext()).getItemPosition().split(" "));
+            mAdapter.update(list);
+        }
     }
 
     @Override
@@ -176,7 +176,11 @@ public class EveryFragment extends BaseFragment implements EveryContract.View {
     @Override
     public void updateRecyclerFromCache() {
         ArrayList<List<HomeBean>> list = (ArrayList<List<HomeBean>>) mCache.getAsObject(Constants.EVERYDAY_CONTENT);
-        mEveryAdapter.updateList(list);
+        if (list == null || list.size() == 0) {
+            getAgainRecycler();
+        } else {
+            mEveryAdapter.updateList(list);
+        }
     }
 
     @Override
@@ -264,10 +268,14 @@ public class EveryFragment extends BaseFragment implements EveryContract.View {
             } else if (holder instanceof RecyclerViewHolder) {
                 ((RecyclerViewHolder) holder).mRecycler.setLayoutManager(new LinearLayoutManager(getActivity()));
                 ((RecyclerViewHolder) holder).mRecycler.setNestedScrollingEnabled(true);
-                EveryAdapter adapter = new EveryAdapter(mList);
-                ((RecyclerViewHolder) holder).mRecycler.setAdapter(adapter);
+                mAdapter = new EveryAdapter(mList);
+                ((RecyclerViewHolder) holder).mRecycler.setAdapter(mAdapter);
             } else if (holder instanceof BottomViewHolder) {
                 ((BottomViewHolder) holder).mChangeItem.setVisibility(View.VISIBLE);
+                ((BottomViewHolder) holder).mChangeItem.setOnClickListener(v -> {
+                    Intent intent = new Intent(getActivity(), ItemChangeActivity.class);
+                    startActivity(intent);
+                });
             }
         }
 
@@ -442,12 +450,20 @@ public class EveryFragment extends BaseFragment implements EveryContract.View {
     class EveryAdapter extends RecyclerView.Adapter<EveryAdapter.ViewHolder> {
 
         private List<List<HomeBean>> mList;
+        private List<String> mItemList = Arrays.asList(SharedPreferenceUtil.getInstance(getContext()).getItemPosition().split(" "));
         EveryItemAdapter adapter;
+
+        private boolean isHave = false;
 
         EveryAdapter(List<List<HomeBean>> lists) {
             mList = new ArrayList<>();
             this.mList = lists;
             notifyDataSetChanged();
+        }
+
+        void update(List<String> list) {
+            mItemList = list;
+            this.notifyDataSetChanged();
         }
 
         @Override
@@ -458,22 +474,48 @@ public class EveryFragment extends BaseFragment implements EveryContract.View {
 
         @Override
         public void onBindViewHolder(ViewHolder holder, int position) {
-            holder.mImage.setImageResource(mList.get(position).get(0).getDrawable());
-            holder.mText.setText(Constants.getTitles().get(mList.get(position).get(0).getType()));
+            isHave = false;
+            for (int i = 0; i < mList.size(); i++) {
+                if (mItemList.get(position).equals(Constants.getTitles().get(mList.get(i).get(0).getType()))) {
+                    isHave = true;
+                    holder.mTitle.setVisibility(View.VISIBLE);
+                    holder.mItemTitle.setVisibility(View.VISIBLE);
+                    holder.mEveryRecycler.setVisibility(View.VISIBLE);
+                    holder.mText.setText(mItemList.get(position));
+                    holder.mImage.setImageResource(mList.get(i).get(0).getDrawable());
 
-            holder.mEveryRecycler.setLayoutManager(new GridLayoutManager(getActivity(), 6));
-            holder.mEveryRecycler.setNestedScrollingEnabled(false);
+                    holder.mEveryRecycler.setLayoutManager(new GridLayoutManager(getActivity(), 6));
+//                    holder.mEveryRecycler.setNestedScrollingEnabled(false);
+
+                    if (mList.get(i).size() > 6) {
+                        List<HomeBean> list = new ArrayList<>();
+                        for (int j = 0; j < 6; j++) {
+                            list.add(mList.get(i).get(j));
+                        }
+                        adapter = new EveryItemAdapter(list);
+                    } else {
+                        adapter = new EveryItemAdapter(mList.get(i));
+                    }
+                    holder.mEveryRecycler.setAdapter(adapter);
+                }
+            }
+
+            if (!isHave) {
+                holder.mTitle.setVisibility(View.GONE);
+                holder.mItemTitle.setVisibility(View.GONE);
+                holder.mEveryRecycler.setVisibility(View.GONE);
+            }
 
             holder.mMore.setOnClickListener(v -> {
 
-                switch (mList.get(position).get(0).getType()) {
+                switch (holder.mText.getText().toString()) {
                     case "Android":
                         RxPosition rxPosition = new RxPosition();
                         rxPosition.setPosition(3);
                         RxBus.getDefault().post(rxPosition);
                         break;
 
-                    case "Welfare":
+                    case "福利":
                         RxPosition rxWelfare = new RxPosition();
                         rxWelfare.setPosition(1);
                         RxBus.getDefault().post(rxWelfare);
@@ -484,33 +526,27 @@ public class EveryFragment extends BaseFragment implements EveryContract.View {
                         msgPosition.setPosition(2);
                         RxBus.getDefault().post(msgPosition);
                         RxCustomer msg = new RxCustomer();
-                        msg.setType(map.get(mList.get(position).get(0).getType()));
+                        msg.setType(holder.mText.getText().toString());
                         RxBus.getDefault().post(msg);
                         break;
                 }
             });
 
-            if (mList.get(position).size() > 6) {
-                List<HomeBean> list = new ArrayList<>();
-                for (int i = 0; i < 6; i++) {
-                    list.add(mList.get(position).get(i));
-                }
-                adapter = new EveryItemAdapter(list);
-            } else {
-                adapter = new EveryItemAdapter(mList.get(position));
-            }
-            holder.mEveryRecycler.setAdapter(adapter);
         }
 
         @Override
         public int getItemCount() {
-            return mList == null ? 0 : mList.size();
+            return mItemList == null ? 0 : mItemList.size();
         }
 
         class ViewHolder extends RecyclerView.ViewHolder {
 
             @BindView(R.id.item_recycler)
             RecyclerView mEveryRecycler;
+            @BindView(R.id.item_everyday_four_title)
+            LinearLayout mTitle;
+            @BindView(R.id.item_title)
+            RelativeLayout mItemTitle;
             @BindView(R.id.title_image)
             ImageView mImage;
             @BindView(R.id.title_text)
