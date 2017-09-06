@@ -1,7 +1,6 @@
 <resources>
     <string name="app_name">Heaven</string>
     <string name="jump">跳过</string>
-    <string name="logged_out">用户已注销</string>
     <string name="lv_10">Lv.10</string>
     <string name="app_main">项目主页</string>
     <string name="sweep_download">扫码下载</string>
@@ -59,17 +58,7 @@
         \n compile "com.android.support:multidex:1.0.1"
     </string>
     <string name="share_text">发现了一个高仿网易云音乐的App，里面有大量IT干货，每天提供安卓，IOS等最新资讯，还有最新电影热映榜和大量书籍信息，大力推荐哦</string>
-    <string name="string_everyday_empty">暂时没有更新内容，去看看其他信息吧~</string>
 
-    <string name="no_name">佚名</string>
-    <string name="string_rating">评分：</string>
-    <string name="string_rating_num">人评分</string>
-    <string name="string_type">类型：</string>
-    <string name="string_publisher">出版社：</string>
-
-    <string name="actionbar_search">搜索</string>
-    <string name="actionbar_more">更多信息</string>
-    <string name="actionbar_share">分享给朋友\(^o^)/~</string>
     <string name="github_issues">您好，很希望得到您的意见，由于没有线上反馈系统，您可以在GitHub的Issues处说明问题原因，也可以通过以下方式联系我，我将根据情况尽量处理哦 ~</string>
 
     <string name="listview_header_hint_normal">下拉刷新&#8230;</string>
@@ -78,13 +67,10 @@
     <string name="nomore_loading">没有更多内容了</string>
     <string name="refreshing">正在刷新&#8230;</string>
     <string name="refresh_done">刷新完成&#8230;</string>
-    <string name="listview_header_last_time">上次更新时间：</string>
-    <string name="_8230">努力加载中&#8230;</string>
     <string name="loading_failed">加载失败,点击重试</string>
     <string name="copy_url">复制链接</string>
     <string name="open_url">打开链接</string>
     <string name="save">保存</string>
-    <string name="separator">&#160;/&#160;</string>
     <string name="spot">&#160;·&#160;</string>
     <string name="android">Android</string>
     <string name="ios">IOS</string>
@@ -100,8 +86,6 @@
     <string name="refresh">refresh</string>
     <string name="director">导演：</string>
     <string name="performer">主演：</string>
-    <string name="genre">类型：</string>
-    <string name="score">评分：</string>
     <string name="more_info">更多信息</string>
     <string name="issues">Issues</string>
     <string name="change_item">调整栏目顺序</string>

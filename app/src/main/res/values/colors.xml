@@ -1,37 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="nav_item_icon_tint_color">#333</color>
-    <color name="nav_item_text_color">#333</color>
     <color name="colorPrimary">#2196F3</color>
     <color name="colorPrimaryDark">#1565C0</color>
     <color name="colorAccent">#E91E63</color>
-    <color name="background_tab_pressed">#6633B5E5</color>
     <color name="colorWhite">#FFFFFF</color>
-    <color name="colorFrost">#FF00DD</color>
-    <color name="colorGreen">#4CAF50</color>
-    <color name="colorPink">#ff97fd</color>
-    <color name="colorViolet">#8097FD</color>
-    <color name="colorGray">#c6c6c6</color>
-    <color name="coc">#176bcc</color>
-    <color name="colorBackground">#c000</color>
     <color name="transparent">#00000000</color>
-    <color name="colorBlack">#000000</color>
-    <color name="colorGGGG">#7b767b</color>
-    <color name="myLocation">#56B881</color>
-    <color name="darkGery">#797979</color>
-    <color name="tranGery">#512e2e2e</color>
     <color name="tabColor">#e2e2e2</color>
 
-
-    <color name="leftColor">#a1de89</color>
-    <color name="rightColor">#f7e494</color>
-    <color name="rightBottomColor">#f7d194</color>
-    <color name="leftColorBottom">#208C59</color>
-    <color name="selectLeftColor">#1daf00</color>
-    <color name="selectRightColor">#f8935c</color>
-    <color name="xyColor">#999</color>
-
-    <color name="horLeftColor">#33AC95</color>
 
     <color name="colorTheme">#ffce3d3a</color>
     <!--页面背景的颜色-->
@@ -41,8 +16,6 @@
     <color name="colorLine">#EBEBEB</color>
     <!--首页分割线-->
     <color name="colorHomeLine">#D4D4D4</color>
-
-    <color name="colorLineDeep">#BBBBBB</color>
 
     <!--item的分割线-->
     <color name="colorLineItem">#FFDDDDDD</color>
@@ -81,9 +54,7 @@
     <!--暂时用于反馈文字-->
     <color name="text_common">#191919</color>
 
-    <color name="text_deed_bg">#f6f6f6</color>
     <!--dialog的查看详情键-->
-    <color name="colorBtDialog">#38659C</color>
 
     <color name="indicator">#1d8bf1</color>
     <color name="indicator_text">#979797</color>

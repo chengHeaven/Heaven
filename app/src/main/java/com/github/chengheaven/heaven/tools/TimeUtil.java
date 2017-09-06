@@ -104,26 +104,25 @@ public class TimeUtil {
         int currYear = Integer.valueOf(currDate.substring(0, 4));
         int commitYear = Integer.valueOf(commitDate.substring(0, 4));
         int flag = (int) (farmatTime(currDate) / 1000 - farmatTime(commitDate) / 1000);
-        String des = null;
+        String des;
         String hourMin = commitDate.substring(11, 16);
-        int temp = flag;
-        if (temp < 60) {
+        if (flag < 60) {
             System.out.println("A");
             if (commitDay < currDay) {
                 des = "昨天  " + hourMin;
             } else {
                 des = "刚刚";
             }
-        } else if (temp < 60 * 60) {
+        } else if (flag < 60 * 60) {
             System.out.println("B");
             if (commitDay < currDay) {
                 des = "昨天  " + hourMin;
             } else {
-                des = temp / 60 + "分钟前";
+                des = flag / 60 + "分钟前";
             }
-        } else if (temp < 60 * 60 * 24) {
+        } else if (flag < 60 * 60 * 24) {
             System.out.println("C");
-            int hour = temp / (60 * 60);
+            int hour = flag / (60 * 60);
             if (commitDay < currDay) {
                 des = "昨天  " + hourMin;
             } else {
@@ -133,14 +132,14 @@ public class TimeUtil {
                     des = hourMin;
                 }
             }
-        } else if (temp < (60 * 60 * 24 * 2)) {
+        } else if (flag < (60 * 60 * 24 * 2)) {
             System.out.println("D");
             if (nowDate - commit == 1) {
                 des = "昨天  " + hourMin;
             } else {
                 des = "前天  " + hourMin;
             }
-        } else if (temp < 60 * 60 * 60 * 3) {
+        } else if (flag < 60 * 60 * 60 * 3) {
             System.out.println("E");
             if (nowDate - commit == 2) {
                 des = "前天  " + hourMin;
@@ -184,7 +183,7 @@ public class TimeUtil {
         Date nowTime = new Date();
         String currDate = sdf1.format(nowTime);
         long currentMilliseconds = nowTime.getTime();// 当前日期的毫秒值
-        Date date = null;
+        Date date;
         try {
             // 将给定的字符串中的日期提取出来
             date = sdf1.parse(time);
@@ -237,7 +236,7 @@ public class TimeUtil {
         Date nowTime = new Date();
         String currDate = sdf1.format(nowTime);
         long currentMilliseconds = nowTime.getTime();// 当前日期的毫秒值
-        Date date = null;
+        Date date;
         try {
             // 将给定的字符串中的日期提取出来
             date = sdf1.parse(time);
@@ -352,13 +351,13 @@ public class TimeUtil {
     public static boolean DateCompare(String data1, String data2) {
         SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
         //得到指定模范的时间
-        Date d1 = null;
+        Date d1;
         try {
             d1 = sdf.parse(data1);
         } catch (ParseException e) {
             return false;
         }
-        Date d2 = null;
+        Date d2;
         try {
             d2 = sdf.parse(data2);
         } catch (ParseException e) {
@@ -374,7 +373,7 @@ public class TimeUtil {
 
     public static String timeFormat(String time) {
         SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ssZ");
-        Date date = null;
+        Date date;
         try {
             // 将给定的字符串中的日期提取出来
             date = sdf.parse(time);
@@ -390,7 +389,7 @@ public class TimeUtil {
     public static String timeFormatStr(String time) {
         //
         SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSSZ");
-        Date date = null;
+        Date date;
         try {
             // 将给定的字符串中的日期提取出来
             date = sdf.parse(time);
@@ -406,7 +405,7 @@ public class TimeUtil {
     public static String timeFormatYYYYMMDD(String time) {
         //
         SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ssZ");
-        Date date = null;
+        Date date;
         try {
             // 将给定的字符串中的日期提取出来
             date = sdf.parse(time);

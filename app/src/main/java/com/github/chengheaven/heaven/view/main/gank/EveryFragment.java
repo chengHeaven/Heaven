@@ -16,7 +16,6 @@ import android.view.animation.LinearInterpolator;
 import android.view.animation.RotateAnimation;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
-import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
@@ -539,10 +538,6 @@ public class EveryFragment extends BaseFragment implements EveryContract.View {
 
             @BindView(R.id.item_recycler)
             RecyclerView mEveryRecycler;
-            @BindView(R.id.item_everyday_four_title)
-            LinearLayout mTitle;
-            @BindView(R.id.item_title)
-            RelativeLayout mItemTitle;
             @BindView(R.id.title_image)
             ImageView mImage;
             @BindView(R.id.title_text)

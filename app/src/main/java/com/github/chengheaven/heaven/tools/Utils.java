@@ -867,7 +867,7 @@ public class Utils {
      * @param context Application Context
      */
     public static String getApkVersionName(Context context) {
-        PackageInfo pInfo = null;
+        PackageInfo pInfo;
         try {
             pInfo = context.getPackageManager().getPackageInfo(context.getPackageName(), 0);
             return pInfo.versionName;
