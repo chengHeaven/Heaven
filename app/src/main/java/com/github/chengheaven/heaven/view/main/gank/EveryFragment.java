@@ -101,8 +101,8 @@ public class EveryFragment extends BaseFragment implements EveryContract.View {
                 public void onAnimationStart(Animation animation) {
                     mPresenter.getBannerUrl();
                     if (TimeUtil.isRightTime()) {
-                        mPresenter.getRecycler("2017", "09", "01");
-//                        mPresenter.getRecycler(s[0], s[1], s[2]);
+//                        mPresenter.getRecycler("2017", "09", "01");
+                        mPresenter.getRecycler(s[0], s[1], s[2]);
                         last = Arrays.asList(s);
                     } else {
                         last = TimeUtil.getLastTime(s[0], s[1], s[2]);
@@ -163,6 +163,11 @@ public class EveryFragment extends BaseFragment implements EveryContract.View {
     public void hideAnimation() {
         mLoading.setVisibility(View.GONE);
         animation.cancel();
+    }
+
+    @Override
+    public void isFirst() {
+        isFirst = true;
     }
 
     @Override

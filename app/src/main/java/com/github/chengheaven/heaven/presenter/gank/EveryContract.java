@@ -21,6 +21,8 @@ public class EveryContract {
 
         void hideAnimation();
 
+        void isFirst();
+
         void updateRecyclerAdapter(ArrayList<List<HomeBean>> lists);
 
         void updateRecyclerFromCache();

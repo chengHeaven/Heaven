@@ -70,6 +70,7 @@ public class EveryPresenter implements EveryContract.Presenter {
                             if (object.size() == 0) {
                                 mView.updateRecyclerFromCache();
                             } else {
+                                mView.isFirst();
                                 mView.updateRecyclerAdapter(object);
                             }
                             Observable.timer(3000, TimeUnit.MILLISECONDS)
@@ -81,9 +82,13 @@ public class EveryPresenter implements EveryContract.Presenter {
 
             @Override
             public void onFailed(String msg) {
-                mView.hideAnimation();
-                mView.toastMessage(msg);
-                mView.updateRecyclerFromCache();
+                if (msg.equals("results is empty")) {
+                    mView.getAgainRecycler();
+                } else {
+                    mView.hideAnimation();
+                    mView.toastMessage(msg);
+                    mView.updateRecyclerFromCache();
+                }
             }
         });
     }
