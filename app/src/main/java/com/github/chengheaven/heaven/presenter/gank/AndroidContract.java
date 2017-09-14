@@ -1,8 +1,8 @@
 package com.github.chengheaven.heaven.presenter.gank;
 
 import com.github.chengheaven.heaven.bean.HomeBean;
-import com.github.chengheaven.heaven.helper.BasePresenter;
-import com.github.chengheaven.heaven.helper.BaseView;
+import com.github.chengheaven.heaven.presenter.BasePresenter;
+import com.github.chengheaven.heaven.view.BaseView;
 
 import java.util.List;
 
@@ -17,6 +17,8 @@ public class AndroidContract {
         void updateList(List<HomeBean> beanList);
 
         void refreshList(List<HomeBean> beanList);
+
+        void recyclerComplete();
     }
 
     public interface Presenter extends BasePresenter {

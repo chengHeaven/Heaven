@@ -21,8 +21,8 @@ import com.bumptech.glide.request.target.Target;
 import com.github.chengheaven.heaven.R;
 import com.github.chengheaven.heaven.bean.BookBean;
 import com.github.chengheaven.heaven.customer.statusbar.StatusBarUtil;
-import com.github.chengheaven.heaven.helper.BaseFragment;
-import com.github.chengheaven.heaven.helper.BasePresenter;
+import com.github.chengheaven.heaven.view.BaseFragment;
+import com.github.chengheaven.heaven.presenter.BasePresenter;
 import com.github.chengheaven.heaven.presenter.bookDetail.BookDetailContract;
 import com.github.chengheaven.heaven.tools.CommonUtils;
 

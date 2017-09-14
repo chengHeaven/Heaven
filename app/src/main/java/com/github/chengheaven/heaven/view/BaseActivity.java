@@ -1,4 +1,4 @@
-package com.github.chengheaven.heaven.helper;
+package com.github.chengheaven.heaven.view;
 
 import android.content.Context;
 import android.graphics.Color;
@@ -17,6 +17,7 @@ import android.view.Window;
 import android.view.WindowManager;
 
 import com.github.chengheaven.heaven.R;
+import com.github.chengheaven.heaven.customer.DoubleClickExitHelper;
 
 /**
  * @author heaven_Cheng Created on 16/9/13.

@@ -67,12 +67,7 @@ public class EveryPresenter implements EveryContract.Presenter {
                         .subscribeOn(Schedulers.io())
                         .observeOn(AndroidSchedulers.mainThread())
                         .subscribe(object -> {
-                            if (object.size() == 0) {
-                                mView.updateRecyclerFromCache();
-                            } else {
-                                mView.isFirst();
-                                mView.updateRecyclerAdapter(object);
-                            }
+                            mView.updateRecyclerAdapter(object);
                             Observable.timer(3000, TimeUnit.MILLISECONDS)
                                     .subscribeOn(Schedulers.io())
                                     .observeOn(AndroidSchedulers.mainThread())

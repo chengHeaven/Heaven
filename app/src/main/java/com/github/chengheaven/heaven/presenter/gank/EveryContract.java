@@ -1,8 +1,8 @@
 package com.github.chengheaven.heaven.presenter.gank;
 
 import com.github.chengheaven.heaven.bean.HomeBean;
-import com.github.chengheaven.heaven.helper.BasePresenter;
-import com.github.chengheaven.heaven.helper.BaseView;
+import com.github.chengheaven.heaven.presenter.BasePresenter;
+import com.github.chengheaven.heaven.view.BaseView;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -20,8 +20,6 @@ public class EveryContract {
         void showAnimation();
 
         void hideAnimation();
-
-        void isFirst();
 
         void updateRecyclerAdapter(ArrayList<List<HomeBean>> lists);
 

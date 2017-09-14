@@ -17,8 +17,8 @@ import com.bumptech.glide.Glide;
 import com.github.chengheaven.heaven.R;
 import com.github.chengheaven.heaven.bean.BookBean;
 import com.github.chengheaven.heaven.customer.XRecyclerView.XRecyclerView;
-import com.github.chengheaven.heaven.helper.BaseFragment;
-import com.github.chengheaven.heaven.helper.BasePresenter;
+import com.github.chengheaven.heaven.view.BaseFragment;
+import com.github.chengheaven.heaven.presenter.BasePresenter;
 import com.github.chengheaven.heaven.presenter.book.CultureContract;
 import com.github.chengheaven.heaven.view.bookDetail.BookDetailActivity;
 

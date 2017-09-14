@@ -35,8 +35,8 @@ import com.bumptech.glide.request.FutureTarget;
 import com.bumptech.glide.request.RequestListener;
 import com.bumptech.glide.request.target.Target;
 import com.github.chengheaven.heaven.R;
-import com.github.chengheaven.heaven.helper.BaseFragment;
-import com.github.chengheaven.heaven.helper.BasePresenter;
+import com.github.chengheaven.heaven.view.BaseFragment;
+import com.github.chengheaven.heaven.presenter.BasePresenter;
 import com.github.chengheaven.heaven.presenter.welfareImage.WelfareImageContract;
 import com.github.chengheaven.heaven.tools.Utils;
 

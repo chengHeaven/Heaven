@@ -15,7 +15,7 @@ import com.github.chengheaven.heaven.application.App;
 import com.github.chengheaven.heaven.customer.MyNestedScrollView;
 import com.github.chengheaven.heaven.di.component.DaggerBookDetailComponent;
 import com.github.chengheaven.heaven.di.module.BookDetailPresenterModule;
-import com.github.chengheaven.heaven.helper.BaseActivity;
+import com.github.chengheaven.heaven.view.BaseActivity;
 import com.github.chengheaven.heaven.presenter.bookDetail.BookDetailPresenter;
 import com.github.chengheaven.heaven.view.webview.WebViewActivity;
 

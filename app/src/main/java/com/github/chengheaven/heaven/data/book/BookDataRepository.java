@@ -3,7 +3,7 @@ package com.github.chengheaven.heaven.data.book;
 import android.content.Context;
 
 import com.github.chengheaven.heaven.bean.BookBean;
-import com.github.chengheaven.heaven.http.RetrofitFactory;
+import com.github.chengheaven.heaven.data.RetrofitFactory;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 

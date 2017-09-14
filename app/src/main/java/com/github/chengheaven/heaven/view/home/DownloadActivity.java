@@ -6,7 +6,7 @@ import android.support.v7.widget.Toolbar;
 import android.widget.TextView;
 
 import com.github.chengheaven.heaven.R;
-import com.github.chengheaven.heaven.helper.BaseActivity;
+import com.github.chengheaven.heaven.view.BaseActivity;
 import com.github.chengheaven.heaven.tools.ShareUtils;
 
 import butterknife.BindView;

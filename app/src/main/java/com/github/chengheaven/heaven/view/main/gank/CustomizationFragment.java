@@ -19,8 +19,8 @@ import com.cocosw.bottomsheet.BottomSheet;
 import com.github.chengheaven.heaven.R;
 import com.github.chengheaven.heaven.bean.HomeBean;
 import com.github.chengheaven.heaven.customer.XRecyclerView.XRecyclerView;
-import com.github.chengheaven.heaven.helper.BaseFragment;
-import com.github.chengheaven.heaven.helper.BasePresenter;
+import com.github.chengheaven.heaven.view.BaseFragment;
+import com.github.chengheaven.heaven.presenter.BasePresenter;
 import com.github.chengheaven.heaven.presenter.gank.CustomizationContract;
 import com.github.chengheaven.heaven.view.webview.WebViewActivity;
 

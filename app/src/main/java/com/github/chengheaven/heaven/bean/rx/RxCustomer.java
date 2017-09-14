@@ -1,4 +1,4 @@
-package com.github.chengheaven.heaven.bean;
+package com.github.chengheaven.heaven.bean.rx;
 
 /**
  * @author Heaven・Cheng Created on 17/8/31.

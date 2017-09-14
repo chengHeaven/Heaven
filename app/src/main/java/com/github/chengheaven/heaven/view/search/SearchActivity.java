@@ -1,7 +1,7 @@
 package com.github.chengheaven.heaven.view.search;
 
 import com.github.chengheaven.heaven.R;
-import com.github.chengheaven.heaven.helper.BaseActivity;
+import com.github.chengheaven.heaven.view.BaseActivity;
 
 /**
  * @author Heaven・Cheng Created on 17/6/15.

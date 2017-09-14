@@ -8,7 +8,7 @@ import android.support.v7.widget.Toolbar;
 import android.view.View;
 
 import com.github.chengheaven.heaven.R;
-import com.github.chengheaven.heaven.helper.BaseActivity;
+import com.github.chengheaven.heaven.view.BaseActivity;
 import com.github.chengheaven.heaven.tools.Utils;
 import com.github.chengheaven.heaven.view.webview.WebViewActivity;
 

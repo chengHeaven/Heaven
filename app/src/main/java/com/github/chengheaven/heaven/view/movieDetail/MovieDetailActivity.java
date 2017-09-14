@@ -15,7 +15,7 @@ import com.github.chengheaven.heaven.application.App;
 import com.github.chengheaven.heaven.customer.MyNestedScrollView;
 import com.github.chengheaven.heaven.di.component.DaggerMovieDetailComponent;
 import com.github.chengheaven.heaven.di.module.MovieDetailPresenterModule;
-import com.github.chengheaven.heaven.helper.BaseActivity;
+import com.github.chengheaven.heaven.view.BaseActivity;
 import com.github.chengheaven.heaven.presenter.movieDetail.MovieDetailPresenter;
 import com.github.chengheaven.heaven.view.webview.WebViewActivity;
 

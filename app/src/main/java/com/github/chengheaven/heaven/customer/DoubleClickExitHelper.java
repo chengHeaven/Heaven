@@ -1,4 +1,4 @@
-package com.github.chengheaven.heaven.helper;
+package com.github.chengheaven.heaven.customer;
 
 import android.app.Activity;
 import android.os.Handler;
@@ -9,14 +9,14 @@ import android.widget.Toast;
 /**
  *  @author heaven_Cheng Created on 16/9/13.
  */
-class DoubleClickExitHelper {
+public class DoubleClickExitHelper {
 
     private final Activity mActivity;
     private boolean isOnKeyBacking;
     private Handler mHandler;
     private Toast mBackToast;
 
-    DoubleClickExitHelper(Activity activity) {
+    public DoubleClickExitHelper(Activity activity) {
         mActivity = activity;
         mHandler = new Handler(Looper.getMainLooper());
     }
@@ -24,7 +24,7 @@ class DoubleClickExitHelper {
     /**
      * Activity onKeyDown事件
      */
-    boolean onKeyDown(int keyCode, KeyEvent event) {
+    public boolean onKeyDown(int keyCode, KeyEvent event) {
         if (keyCode != KeyEvent.KEYCODE_BACK) {
             return false;
         }

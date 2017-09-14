@@ -1,8 +1,8 @@
 package com.github.chengheaven.heaven.presenter.book;
 
 import com.github.chengheaven.heaven.bean.BookBean;
-import com.github.chengheaven.heaven.helper.BasePresenter;
-import com.github.chengheaven.heaven.helper.BaseView;
+import com.github.chengheaven.heaven.presenter.BasePresenter;
+import com.github.chengheaven.heaven.view.BaseView;
 
 import java.util.List;
 

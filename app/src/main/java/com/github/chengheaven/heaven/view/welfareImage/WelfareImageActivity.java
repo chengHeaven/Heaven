@@ -8,7 +8,7 @@ import com.github.chengheaven.heaven.R;
 import com.github.chengheaven.heaven.application.App;
 import com.github.chengheaven.heaven.di.component.DaggerWelfareImageComponent;
 import com.github.chengheaven.heaven.di.module.WelfareImagePresenterModule;
-import com.github.chengheaven.heaven.helper.BaseActivity;
+import com.github.chengheaven.heaven.view.BaseActivity;
 import com.github.chengheaven.heaven.presenter.welfareImage.WelfareImagePresenter;
 
 import javax.inject.Inject;

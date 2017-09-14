@@ -1,8 +1,8 @@
 package com.github.chengheaven.heaven.presenter.main;
 
-import com.github.chengheaven.heaven.bean.RxDaily;
+import com.github.chengheaven.heaven.bean.rx.RxDaily;
+import com.github.chengheaven.heaven.customer.RxBus;
 import com.github.chengheaven.heaven.data.DataRepository;
-import com.github.chengheaven.heaven.helper.RxBus;
 
 import javax.inject.Inject;
 

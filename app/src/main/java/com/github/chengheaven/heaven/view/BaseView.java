@@ -1,4 +1,6 @@
-package com.github.chengheaven.heaven.helper;
+package com.github.chengheaven.heaven.view;
+
+import com.github.chengheaven.heaven.presenter.BasePresenter;
 
 /**
  * @author heaven_Cheng Created on 17/2/9.

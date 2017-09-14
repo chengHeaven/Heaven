@@ -1,5 +1,6 @@
 package com.github.chengheaven.heaven.presenter.gank;
 
+import com.github.chengheaven.heaven.bean.HomeBean;
 import com.github.chengheaven.heaven.data.DataRepository;
 import com.github.chengheaven.heaven.data.every.EveryDataSource;
 
@@ -39,9 +40,9 @@ public class AndroidPresenter implements AndroidContract.Presenter {
 
     @Override
     public void getAndroid(String type, String id, int page, int per_page) {
-        mDataRepository.getGankData(id, page, per_page, new EveryDataSource.EveryCallback() {
+        mDataRepository.getGankData(id, page, per_page, new EveryDataSource.EveryCallback<HomeBean>() {
             @Override
-            public void onSuccess(List results) {
+            public void onSuccess(List<HomeBean> results) {
                 Observable.just(results)
                         .subscribeOn(Schedulers.io())
                         .observeOn(AndroidSchedulers.mainThread())
@@ -56,7 +57,7 @@ public class AndroidPresenter implements AndroidContract.Presenter {
 
             @Override
             public void onFailed(String msg) {
-                mView.updateList(null);
+                mView.recyclerComplete();
                 mView.toastMessage(msg);
             }
         });

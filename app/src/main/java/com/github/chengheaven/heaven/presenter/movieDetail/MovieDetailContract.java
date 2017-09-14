@@ -2,8 +2,8 @@ package com.github.chengheaven.heaven.presenter.movieDetail;
 
 import com.github.chengheaven.heaven.bean.MovieBean;
 import com.github.chengheaven.heaven.bean.MovieDetailBean;
-import com.github.chengheaven.heaven.helper.BasePresenter;
-import com.github.chengheaven.heaven.helper.BaseView;
+import com.github.chengheaven.heaven.presenter.BasePresenter;
+import com.github.chengheaven.heaven.view.BaseView;
 
 /**
  * @author Heaven・Cheng Created on 17/6/7.

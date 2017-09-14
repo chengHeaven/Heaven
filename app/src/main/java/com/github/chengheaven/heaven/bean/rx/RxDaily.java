@@ -1,10 +1,10 @@
-package com.github.chengheaven.heaven.bean;
+package com.github.chengheaven.heaven.bean.rx;
 
 /**
- * @author Heaven・Cheng Created on 17/8/31.
+ * @author Heaven・Cheng Created on 17/9/1.
  */
 
-public class RxPosition {
+public class RxDaily {
 
     private int position;
 

@@ -4,7 +4,7 @@ import android.content.Context;
 
 import com.github.chengheaven.heaven.bean.MovieBean;
 import com.github.chengheaven.heaven.bean.MovieDetailBean;
-import com.github.chengheaven.heaven.http.RetrofitFactory;
+import com.github.chengheaven.heaven.data.RetrofitFactory;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 

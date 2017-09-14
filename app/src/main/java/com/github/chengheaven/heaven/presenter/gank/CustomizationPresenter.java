@@ -1,10 +1,10 @@
 package com.github.chengheaven.heaven.presenter.gank;
 
 import com.github.chengheaven.heaven.bean.HomeBean;
-import com.github.chengheaven.heaven.bean.RxCustomer;
+import com.github.chengheaven.heaven.bean.rx.RxCustomer;
 import com.github.chengheaven.heaven.data.DataRepository;
 import com.github.chengheaven.heaven.data.every.EveryDataSource;
-import com.github.chengheaven.heaven.helper.RxBus;
+import com.github.chengheaven.heaven.customer.RxBus;
 
 import java.util.List;
 

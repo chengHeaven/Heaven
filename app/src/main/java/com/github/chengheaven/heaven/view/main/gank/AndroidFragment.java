@@ -18,8 +18,8 @@ import com.bumptech.glide.load.engine.DiskCacheStrategy;
 import com.github.chengheaven.heaven.R;
 import com.github.chengheaven.heaven.bean.HomeBean;
 import com.github.chengheaven.heaven.customer.XRecyclerView.XRecyclerView;
-import com.github.chengheaven.heaven.helper.BaseFragment;
-import com.github.chengheaven.heaven.helper.BasePresenter;
+import com.github.chengheaven.heaven.view.BaseFragment;
+import com.github.chengheaven.heaven.presenter.BasePresenter;
 import com.github.chengheaven.heaven.presenter.gank.AndroidContract;
 import com.github.chengheaven.heaven.view.webview.WebViewActivity;
 
@@ -84,14 +84,19 @@ public class AndroidFragment extends BaseFragment implements AndroidContract.Vie
 
     @Override
     public void updateList(List<HomeBean> beanList) {
-        mRecycler.refreshComplete();
+        recyclerComplete();
         mAdapter.update(beanList);
     }
 
     @Override
     public void refreshList(List<HomeBean> beanList) {
-        mRecycler.refreshComplete();
+        recyclerComplete();
         mAdapter.refresh(beanList);
+    }
+
+    @Override
+    public void recyclerComplete() {
+        mRecycler.refreshComplete();
     }
 
     class AndroidAdapter extends RecyclerView.Adapter<AndroidAdapter.ViewHolder> {

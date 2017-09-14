@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.github.chengheaven.heaven.http.cache;
+package com.github.chengheaven.heaven.customer;
 
 import android.content.Context;
 import android.graphics.Bitmap;
@@ -47,9 +47,7 @@ import java.util.Set;
 import java.util.concurrent.atomic.AtomicInteger;
 import java.util.concurrent.atomic.AtomicLong;
 
-/**
- * @author heaven_Cheng Created on 17/2/9.
- */
+
 public class ACache {
     private static final int TIME_HOUR = 60 * 60;
     public static final int TIME_DAY = TIME_HOUR * 24;

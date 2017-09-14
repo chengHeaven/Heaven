@@ -21,14 +21,14 @@ import android.widget.TextView;
 import com.bumptech.glide.Glide;
 import com.github.chengheaven.heaven.R;
 import com.github.chengheaven.heaven.bean.HomeBean;
-import com.github.chengheaven.heaven.bean.RxCustomer;
-import com.github.chengheaven.heaven.bean.RxDaily;
-import com.github.chengheaven.heaven.bean.RxPosition;
+import com.github.chengheaven.heaven.bean.rx.RxCustomer;
+import com.github.chengheaven.heaven.bean.rx.RxDaily;
+import com.github.chengheaven.heaven.bean.rx.RxPosition;
 import com.github.chengheaven.heaven.constants.Constants;
-import com.github.chengheaven.heaven.helper.BaseFragment;
-import com.github.chengheaven.heaven.helper.BasePresenter;
-import com.github.chengheaven.heaven.helper.RxBus;
-import com.github.chengheaven.heaven.http.cache.ACache;
+import com.github.chengheaven.heaven.view.BaseFragment;
+import com.github.chengheaven.heaven.presenter.BasePresenter;
+import com.github.chengheaven.heaven.customer.RxBus;
+import com.github.chengheaven.heaven.customer.ACache;
 import com.github.chengheaven.heaven.presenter.gank.EveryContract;
 import com.github.chengheaven.heaven.tools.GlideImageLoader;
 import com.github.chengheaven.heaven.tools.SharedPreferenceUtil;
@@ -163,11 +163,6 @@ public class EveryFragment extends BaseFragment implements EveryContract.View {
     public void hideAnimation() {
         mLoading.setVisibility(View.GONE);
         animation.cancel();
-    }
-
-    @Override
-    public void isFirst() {
-        isFirst = true;
     }
 
     @Override

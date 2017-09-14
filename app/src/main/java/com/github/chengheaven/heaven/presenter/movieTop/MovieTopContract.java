@@ -1,8 +1,8 @@
 package com.github.chengheaven.heaven.presenter.movieTop;
 
 import com.github.chengheaven.heaven.bean.MovieBean;
-import com.github.chengheaven.heaven.helper.BasePresenter;
-import com.github.chengheaven.heaven.helper.BaseView;
+import com.github.chengheaven.heaven.presenter.BasePresenter;
+import com.github.chengheaven.heaven.view.BaseView;
 
 import java.util.List;
 

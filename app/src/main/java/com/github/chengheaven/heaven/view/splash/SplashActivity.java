@@ -10,7 +10,7 @@ import android.widget.TextView;
 import com.bumptech.glide.Glide;
 import com.github.chengheaven.heaven.R;
 import com.github.chengheaven.heaven.constants.Constants;
-import com.github.chengheaven.heaven.helper.BaseActivity;
+import com.github.chengheaven.heaven.view.BaseActivity;
 import com.github.chengheaven.heaven.view.main.MainActivity;
 
 import java.util.Random;

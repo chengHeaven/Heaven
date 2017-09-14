@@ -1,7 +1,7 @@
 package com.github.chengheaven.heaven.presenter.mainFragment;
 
-import com.github.chengheaven.heaven.helper.BasePresenter;
-import com.github.chengheaven.heaven.helper.BaseView;
+import com.github.chengheaven.heaven.presenter.BasePresenter;
+import com.github.chengheaven.heaven.view.BaseView;
 
 /**
  * @author Heaven・Cheng Created on 17/5/15.

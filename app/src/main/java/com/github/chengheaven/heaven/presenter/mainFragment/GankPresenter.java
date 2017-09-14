@@ -1,8 +1,8 @@
 package com.github.chengheaven.heaven.presenter.mainFragment;
 
-import com.github.chengheaven.heaven.bean.RxPosition;
+import com.github.chengheaven.heaven.bean.rx.RxPosition;
 import com.github.chengheaven.heaven.data.DataRepository;
-import com.github.chengheaven.heaven.helper.RxBus;
+import com.github.chengheaven.heaven.customer.RxBus;
 
 import javax.inject.Inject;
 

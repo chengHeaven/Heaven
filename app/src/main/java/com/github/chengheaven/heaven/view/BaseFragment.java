@@ -1,4 +1,4 @@
-package com.github.chengheaven.heaven.helper;
+package com.github.chengheaven.heaven.view;
 
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -6,6 +6,7 @@ import android.support.v4.app.Fragment;
 import android.widget.Toast;
 
 import com.github.chengheaven.heaven.customer.LoadingProgressDialog;
+import com.github.chengheaven.heaven.view.BaseView;
 
 /**
  * @author Heaven・Cheng Created on 17/2/21.

@@ -22,8 +22,8 @@ public class DataRepository implements EveryDataSource, MovieDataSource, BookDat
     private final BookDataSource mBookDataSource;
 
     @Inject
-    DataRepository(EveryDataSource mveryDataSource, MovieDataSource movieDataSource, BookDataSource bookDataSource) {
-        this.mEveryDataSource = mveryDataSource;
+    DataRepository(EveryDataSource everyDataSource, MovieDataSource movieDataSource, BookDataSource bookDataSource) {
+        this.mEveryDataSource = everyDataSource;
         this.mMovieDataSource = movieDataSource;
         mBookDataSource = bookDataSource;
     }

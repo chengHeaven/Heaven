@@ -8,7 +8,7 @@ import com.github.chengheaven.heaven.R;
 import com.github.chengheaven.heaven.bean.FrontpageBean;
 import com.github.chengheaven.heaven.bean.HomeBean;
 import com.github.chengheaven.heaven.constants.Constants;
-import com.github.chengheaven.heaven.http.RetrofitFactory;
+import com.github.chengheaven.heaven.data.RetrofitFactory;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 
@@ -158,9 +158,16 @@ public class EveryDataRepository implements EveryDataSource {
                 try {
                     String str = response.body().string();
                     JSONObject jsonObject = new JSONObject(str);
+
                     if (jsonObject.getBoolean("error")) {
                         callback.onFailed("获取数据失败");
                     }
+
+                    if (jsonObject.getString("results").equals("{}")) {
+                        callback.onFailed("results is empty");
+                        return;
+                    }
+
                     JSONArray jsonArray = jsonObject.getJSONArray("results");
                     List<HomeBean> welfareList = new Gson().fromJson(jsonArray.toString(), new TypeToken<List<HomeBean>>() {
                     }.getType());
