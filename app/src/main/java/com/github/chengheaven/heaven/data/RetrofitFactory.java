@@ -2,6 +2,8 @@ package com.github.chengheaven.heaven.data;
 
 import android.annotation.SuppressLint;
 
+import com.github.chengheaven.heaven.customer.WebViewCookie;
+
 import java.security.SecureRandom;
 import java.security.cert.CertificateException;
 import java.security.cert.X509Certificate;
@@ -48,10 +50,10 @@ public class RetrofitFactory {
 
     private static Retrofit.Builder getBuilder(String api) {
         return new Retrofit.Builder()
-                .client(getOkHttpClient())
                 .baseUrl(api)
                 .addConverterFactory(GsonConverterFactory.create())
-                .addCallAdapterFactory(RxJavaCallAdapterFactory.create());
+                .addCallAdapterFactory(RxJavaCallAdapterFactory.create())
+                .client(sOkHttpClient);
     }
 
     public static ApiService getDouBanInstance() {
@@ -85,6 +87,7 @@ public class RetrofitFactory {
                 .readTimeout(20, TimeUnit.SECONDS)
                 .writeTimeout(20, TimeUnit.SECONDS)
                 .connectTimeout(20, TimeUnit.SECONDS)
+                .cookieJar(new WebViewCookie())
                 .sslSocketFactory(getSSLSocketFactory())
                 .hostnameVerifier(getHostnameVerifier())
                 .build();
