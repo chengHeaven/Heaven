@@ -71,7 +71,6 @@ public class BookDataRepository implements BookDataSource {
                 } catch (Exception e) {
                     callback.onFailed("获取数据失败!");
                     e.printStackTrace();
-                    e.printStackTrace();
                 }
             }
 

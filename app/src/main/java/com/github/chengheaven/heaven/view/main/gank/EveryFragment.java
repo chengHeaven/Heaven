@@ -25,15 +25,15 @@ import com.github.chengheaven.heaven.bean.rx.RxCustomer;
 import com.github.chengheaven.heaven.bean.rx.RxDaily;
 import com.github.chengheaven.heaven.bean.rx.RxPosition;
 import com.github.chengheaven.heaven.constants.Constants;
-import com.github.chengheaven.heaven.view.BaseFragment;
-import com.github.chengheaven.heaven.presenter.BasePresenter;
-import com.github.chengheaven.heaven.customer.RxBus;
 import com.github.chengheaven.heaven.customer.ACache;
+import com.github.chengheaven.heaven.customer.RxBus;
+import com.github.chengheaven.heaven.presenter.BasePresenter;
 import com.github.chengheaven.heaven.presenter.gank.EveryContract;
 import com.github.chengheaven.heaven.tools.GlideImageLoader;
 import com.github.chengheaven.heaven.tools.SharedPreferenceUtil;
 import com.github.chengheaven.heaven.tools.TimeUtil;
 import com.github.chengheaven.heaven.tools.Utils;
+import com.github.chengheaven.heaven.view.BaseFragment;
 import com.github.chengheaven.heaven.view.webview.WebViewActivity;
 import com.youth.banner.Banner;
 
@@ -155,11 +155,13 @@ public class EveryFragment extends BaseFragment implements EveryContract.View {
         }
     }
 
+    @Override
     public void showAnimation() {
         mLoading.setVisibility(View.VISIBLE);
         animation.startNow();
     }
 
+    @Override
     public void hideAnimation() {
         mLoading.setVisibility(View.GONE);
         animation.cancel();
@@ -233,6 +235,8 @@ public class EveryFragment extends BaseFragment implements EveryContract.View {
                     return RECYCLER;
                 case 2:
                     return BOTTOM;
+                default:
+                    break;
             }
             return super.getItemViewType(position);
         }

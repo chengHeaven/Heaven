@@ -10,7 +10,7 @@
         <item name="windowNoTitle">true</item>
     </style>
 
-    <style name="AppTheme" parent="AppThemeRed"/>
+    <style name="AppTheme" parent="AppThemeRed" />
 
     <style name="AppThemeRed" parent="Theme.AppCompat.Light.NoActionBar">
         <item name="colorPrimary">@color/colorTheme</item>
@@ -90,9 +90,9 @@
         <item name="windowNoTitle">true</item>
     </style>
 
-    <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar"/>
+    <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
 
-    <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light"/>
+    <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
 
     <!--水平分隔线-->
     <style name="horizontalLine">
@@ -115,6 +115,11 @@
 
     <!--用于项目主页-->
     <style name="CollapsingToolbarTitleStyle" parent="@android:style/TextAppearance">
+        <item name="android:textSize">18.0sp</item>
+        <item name="android:textColor">@android:color/transparent</item>
+    </style>
+
+    <style name="CollapsingToolbarTitleStyleCenter" parent="@android:style/TextAppearance">
         <item name="android:textSize">18.0sp</item>
         <item name="android:textColor">@android:color/transparent</item>
     </style>
